@@ -52,7 +52,7 @@ export const projects: Project[] = [
       "A location-based safety and crime awareness app that uses real-time APIs to display area safety scores, recent crime reports, and testimonials.",
     links: [
       {
-        label: "Live Preview",
+        label: "Documentation",
         href: "https://western-aluminum-170.notion.site/Saathi-App-Documentation-21fe44bc5a7f80d38857f80537adb39e",
         kind: "preview",
       },
@@ -72,7 +72,7 @@ export const projects: Project[] = [
       "A restaurant review platform with Keycloak-based authentication, Elasticsearch-powered full-text search, geolocation-based restaurant discovery, review management, photo uploads, and Kibana analytics.",
     links: [
       {
-        label: "Live Preview",
+        label: "Documentation",
         href: "https://western-aluminum-170.notion.site/Restaurant-Review-Platform-API-Documentation-204e44bc5a7f8029a4e3d3d6153a6ffa?pvs=74",
         kind: "preview",
       },
@@ -93,7 +93,7 @@ export const projects: Project[] = [
       "A secure multi-user blogging backend providing REST APIs for users, posts, comments, tags, and categories. Features JWT authentication, DTO mapping with MapStruct, validation, centralized exception handling, and PostgreSQL containerization with Docker.",
     links: [
       {
-        label: "Live Preview",
+        label: "Documentation",
         href: "https://western-aluminum-170.notion.site/API-Documentation-Blog-Platform-1f4e44bc5a7f80e6867bdc48c53e4b43?pvs=74",
         kind: "preview",
       },
