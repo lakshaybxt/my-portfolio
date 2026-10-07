@@ -23,6 +23,41 @@ body {
 	color: white;
 }
 
+main > section,
+.footer,
+.header {
+	animation: fade-up 0.7s ease both;
+}
+
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes float-card {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+}
+
+@keyframes pulse-glow {
+	0%, 100% {
+		box-shadow: 0 0 0 0 rgba(0, 184, 90, 0.35);
+	}
+	50% {
+		box-shadow: 0 0 0 10px rgba(0, 184, 90, 0);
+	}
+}
+
 .container {
   max-width: 900px; 
   margin: 0 auto; 
@@ -41,6 +76,12 @@ body {
 	justify-content: center;
 	align-items: center;
 	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-left:hover {
+	transform: translateY(-2px) rotate(-2deg);
+	box-shadow: 0 0 0 1px rgba(0, 184, 90, 0.5);
 }
 
 .header-left img {
@@ -59,6 +100,16 @@ body {
 	text-decoration: none;
 	color: white;
 	font-weight: 500;
+	position: relative;
+	transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header-right .nav-list li {
+	transition: transform 0.3s ease;
+}
+
+.header-right .nav-list li:hover {
+	transform: translateY(-2px);
 }
 
 .header-right .nav-list .home a {
@@ -130,6 +181,7 @@ body {
 	height: 200px; */
   z-index: 1;
 	border-radius: 8px;
+	animation: pulse-glow 3.5s ease-in-out infinite;
 }
 
 .about-picture img {
@@ -138,6 +190,8 @@ body {
 	width: 200px;
 	z-index: 2;
 	border-radius: 8px;
+	animation: float-card 5s ease-in-out infinite;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.24);
 }
 
 .tools-section {
@@ -180,6 +234,14 @@ body {
 	width: 100%;
 	height: auto;
 	white-space: nowrap;
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+	border: 1px solid transparent;
+}
+
+.tools-list li:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 0 0 1px rgba(0, 184, 90, 0.5);
+	border-color: rgba(0, 184, 90, 0.5);
 }
 
 @keyframes scroll-right {
@@ -206,12 +268,32 @@ body {
 	white-space: nowrap;
   max-width: 100%; 
 	scroll-behavior: smooth;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+.chart-container::-webkit-scrollbar {
+	height: 2px;
+}
+
+.chart-container::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.chart-container::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.25);
+	border-radius: 999px;
+}
+
+.chart-container::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 184, 90, 0.7);
 }
 
 .chart-container img {
 	min-width: 1000px;
 	width: 100%;
 	height: auto;
+	cursor: grab;
 	user-select: none;
 	pointer-events: none;
 }
@@ -232,19 +314,24 @@ body {
 
 .project-grid .project-card {
 	max-width: 450px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+	border: 1px solid transparent;
 }
 
 .project-grid .project-card img {
 	max-width: 100%;
 	border-radius: 10px;
-}
-
-.project-grid .project-card {
-	transition: transform 0.3s ease;
+	transition: transform 0.35s ease, filter 0.35s ease;
 }
 
 .project-grid .project-card:hover {
-	transform:scale(0.99);
+	transform: translateY(-4px) scale(1.01);
+	box-shadow: 0 18px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-grid .project-card:hover img {
+	transform: scale(1.02);
+	filter: saturate(1.1);
 }
 
 .project-info h2 {
@@ -280,6 +367,15 @@ body {
 
 .project-links a:hover {
 	color: #16e379;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 @media (max-width: 750px) {
@@ -318,6 +414,12 @@ body {
 	display: flex;
 	gap: 20px;
 	min-width: 0;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	padding: 8px 0;
+}
+
+.blog-card:hover {
+	transform: translateX(4px);
 }
 
 .blog-content {
@@ -440,6 +542,15 @@ body {
 	position: relative;
 	opacity: 1;
 	transform: none;
+	animation: fade-up 0.65s ease both;
+}
+
+.timeline-item:nth-child(2) {
+	animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(3) {
+	animation-delay: 0.2s;
 }
 
 .timeline-dot {
@@ -538,11 +649,13 @@ body {
 	color: #c4c4c4;
 	gap: 10px;
 	text-decoration: none;
-	transition: background-color 0.3s ease, transform 0.2s ease;
+	transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .social-links a:hover {
 	background-color: rgba(47, 45, 45, 0.6);
+	transform: translateY(-2px);
+	box-shadow: 0 0 0 1px rgba(0, 184, 90, 0.5);
 }
 
 .social-links a svg {
