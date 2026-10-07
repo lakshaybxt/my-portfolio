@@ -125,7 +125,7 @@ body {
 	background-color: #00B85A;
 	/* background-color: #9400D3; */
 	width: 85%;
-	height: 70%;
+	height: 45%;
 	/* width: 200px;
 	height: 200px; */
   z-index: 1;
@@ -294,6 +294,11 @@ body {
 	.about-section {
 		flex-direction: column-reverse;
 	}
+
+	.about-picture .bg {
+		width: 64%;
+		height: 80%;
+	}
 }
 
 .blog-section h2 {
@@ -312,6 +317,12 @@ body {
 .blog-card {
 	display: flex;
 	gap: 20px;
+	min-width: 0;
+}
+
+.blog-content {
+	flex: 1;
+	min-width: 0;
 }
 
 .blog-image {
@@ -355,6 +366,7 @@ body {
 	color: #c4c4c4;
 	font-size: 0.65rem;
 	display: flex;
+	flex-wrap: wrap;
 	margin-top: 10px;
 	gap: 10px;
 }
@@ -376,6 +388,7 @@ body {
 .blog-content .blog-tags {
 	list-style: none;
 	display: flex;
+	flex-wrap: wrap;
 	font-size: 0.73rem;
 	margin: 0;
 	padding: 0;
@@ -387,6 +400,7 @@ body {
 	color: #00B85A;
 	text-decoration: none;
 	transition: color 0.3s ease;
+	overflow-wrap: anywhere;
 }
 .blog-content .blog-tags a:hover {
 	color: #08984e;
@@ -502,6 +516,10 @@ body {
 }
 
 @media (max-width: 550px) {
+	.blog-card {
+		flex-direction: column;
+	}
+
 	.social-links {
 		grid-template-columns: repeat(2, 1fr);
 	}
