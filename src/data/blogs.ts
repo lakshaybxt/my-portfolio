@@ -1,5 +1,6 @@
 import kafkaImage from "../assets/images/kafka-blog.png"
 import microservicesImage from "../assets/images/microservices-blog.png"
+import ragImage from "../assets/images/rag-blog.png"
 
 export type BlogPost = {
   title: string
@@ -13,6 +14,24 @@ export type BlogPost = {
 }
 
 export const blogPosts: BlogPost[] = [
+
+  {
+    title: "What Is RAG (Retrieval-Augmented Generation)? How It Works Explained",
+    href: "https://medium.com/@lakshaybisht.dev/what-is-rag-retrieval-augmented-generation-how-it-works-explained-d8700c83d9a0",
+    image: ragImage,
+    imageAlt: "Retrieval-Augmented Generation (RAG) Architecture Blog Thumbnail",
+    date: "October 14, 2026",
+    readingTime: "5 min read",
+    description:
+      "An introduction to Retrieval-Augmented Generation (RAG) and how it works, covering document ingestion, text chunking, embeddings, vector databases, semantic search, context retrieval, and LLM-powered answer generation.",
+    tags: [
+      "#rag",
+      "#generativeai",
+      "#artificialintelligence",
+      "#java",
+      "#softwareengineering",
+    ],
+  },
   {
     title:
       "Kafka in Microservices: Concepts, Architecture & Real-Time Data Pipeline",
